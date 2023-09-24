@@ -1,0 +1,9 @@
+/home/martin/Downloads/PC/Manjaro/grub-customizer/src/build/CMakeFiles/grub-customizer.dir
+/home/martin/Downloads/PC/Manjaro/grub-customizer/src/build/CMakeFiles/grubcfg-proxy.dir
+/home/martin/Downloads/PC/Manjaro/grub-customizer/src/build/CMakeFiles/uninstall.dir
+/home/martin/Downloads/PC/Manjaro/grub-customizer/src/build/CMakeFiles/edit_cache.dir
+/home/martin/Downloads/PC/Manjaro/grub-customizer/src/build/CMakeFiles/rebuild_cache.dir
+/home/martin/Downloads/PC/Manjaro/grub-customizer/src/build/CMakeFiles/list_install_components.dir
+/home/martin/Downloads/PC/Manjaro/grub-customizer/src/build/CMakeFiles/install.dir
+/home/martin/Downloads/PC/Manjaro/grub-customizer/src/build/CMakeFiles/install/local.dir
+/home/martin/Downloads/PC/Manjaro/grub-customizer/src/build/CMakeFiles/install/strip.dir
