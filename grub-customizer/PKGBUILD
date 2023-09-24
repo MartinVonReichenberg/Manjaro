@@ -1,0 +1,76 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=grub-customizer
+pkgver=5.2.3
+pkgrel=1
+pkgdesc="A graphical grub2 settings manager"
+url="https://launchpad.net/grub-customizer"
+arch=(x86_64)
+license=(GPL3)
+depends=(
+  gcc-libs
+  glibc
+  grub
+  openssl
+)
+makedepends=(
+  atkmm
+  cairomm
+  cmake
+  glib2
+  glibmm
+  gtk3
+  gtkmm3
+  libarchive
+  libsigc++
+  pangomm
+)
+optdepends=(
+  'hwinfo: for additional hardware information'
+  'polkit: for authorization'
+  'xorg-xhost: for authorization on xorg-xwayland'
+)
+backup=(etc/$pkgname/grub.cfg)
+source=(
+  https://launchpad.net/$pkgname/${pkgver%.*}/$pkgver/+download/${pkgname}_$pkgver.tar.gz
+  grub.cfg
+)
+sha512sums=('SKIP'
+            'SKIP')
+
+build(){
+  local cmake_options=(
+    -DCMAKE_INSTALL_PREFIX=/usr
+    -DCMAKE_BUILD_TYPE=None
+    -Wno-dev
+    -B build
+    -S $pkgname-$pkgver
+  )
+
+  cmake "${cmake_options[@]}"
+  cmake --build build --verbose
+}
+
+check() {
+  ctest --test-dir build --output-on-failure
+}
+
+package(){
+  depends+=(
+    atkmm libatkmm-1.6.so
+    cairomm libcairomm-1.0.so
+    gtk3 libgdk-3.so
+    glib2 libglib-2.0.so
+    glibmm libglibmm-2.4.so
+    gtkmm3 libgtkmm-3.0.so
+    libarchive libarchive.so
+    libsigc++ libsigc-2.0.so
+    pangomm libpangomm-1.4.so
+  )
+
+  DESTDIR="$pkgdir" cmake --install build
+  # configuration
+  install -vDm 644 grub.cfg -t "$pkgdir/etc/$pkgname/"
+  # additional documentation
+  install -vDm 644 $pkgname-$pkgver/{changelog,README} -t "$pkgdir/usr/share/doc/$pkgname/"
+}
