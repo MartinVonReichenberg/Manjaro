@@ -5,7 +5,7 @@ pkgver=1
 pkgrel=1
 arch=(any)
 pkgdesc='Meta package for Gaming including Steam, Lutris, Wine, essential gaming libraries & several other dependencies'
-depends=(mesa lib32-mesa alsa-lib alsa-plugins cups dosbox giflib glfw-x11 gnutls
+depends=(mesa lib32-mesa alsa-lib alsa-plugins dosbox giflib glfw-x11 gnutls
 	 gst-plugins-base-libs gtk2 gtk2+extra gtk3 lib32-alsa-lib lib32-alsa-plugins
 	 lib32-giflib lib32-gnutls lib32-gst-plugins-base lib32-gst-plugins-base-libs
 	 lib32-gst-plugins-good lib32-gtk2 lib32-gtk3 lib32-libgcrypt lib32-libgpg-error lib32-libjpeg-turbo
